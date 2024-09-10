@@ -1,0 +1,30 @@
+#ver0.01
+Base UI working 
+Base elevated launch
+Can't execute anything else through ezCMD
+OS corruption check added
+Battery Report Generation added
+Password Remover added
+Needs to manually change script permission to start on certain computers
+
+#ver0.02
+Menu system correctly implemented
+UI reworked
+Color text added
+Users Tool added
+Password Remover added
+Secret Menu added
+Can't execute anything else through ezCMD
+App requires to be on a root folder like c:
+Needs to manually change script permission to start on certain computers
+
+#ver0.03
+Fully implemented plugin addon
+System info gathering tool added
+App is now fully portable
+App bypasses script permissions on all pc's
+\gen folder added for file generation used by system info tool and alike
+Changed where battery report was generated to \gen\batteryreport
+
+#ver0.04
+Fixed a code error preventing portable usage of the script
