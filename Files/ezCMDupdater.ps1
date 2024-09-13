@@ -8,7 +8,7 @@ $gitver = (invoke-webrequest -uri "https://github.com/Frysix/ezCMD/raw/main/File
 $localver = (get-content -path $psscriptroot\ver\ver.txt)
 if ($gitver -eq $localver) {
 $oldver = (get-content -path $psscriptroot\ver\oldver.txt)
-remove-item -path "$scriptpar2\ezCMD-$oldver"
+remove-item -path "$scriptpar2\ezCMD-$oldver" -recurse -force
 start-process -filepath "$psscriptroot\ezCMDmain.bat" -verb runas
 } else {
 $outdir = (join-path -path "$scriptpar2" -childpath "ezCMD-$gitver.zip")
