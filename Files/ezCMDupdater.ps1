@@ -7,6 +7,8 @@ if (gping) {
 $gitver = (invoke-webrequest -uri "https://github.com/Frysix/ezCMD/raw/main/Files/ver/ver.txt" -usebasicp | select-object -expandproperty content)
 $localver = (get-content -path $psscriptroot\ver\ver.txt)
 if ($gitver -eq $localver) {
+$oldver = (get-content -path $psscriptroot\ver\oldver.txt)
+remove-item -path "$scriptpar2\ezCMD-$oldver"
 start-process -filepath "$psscriptroot\ezCMDmain.bat" -verb runas
 } else {
 $outdir = (join-path -path "$scriptpar2" -childpath "ezCMD-$gitver.zip")
@@ -18,8 +20,6 @@ $localver | Out-File -FilePath "$scriptpar2\ezCMD-$gitver\Files\ver\oldver.txt" 
 remove-item -path "$scriptpar2\ezCMD-$gitver.zip"
 start-process -filepath "$scriptpar2\ezCMD-$gitver\ezCMD.bat" -verb runas
 }
-} else {
-$oldver = (get-content -path $psscriptroot\ver\oldver.txt)
-remove-item -path "$scriptpar2\ezCMD-$oldver" 
+} else { 
 start-process -filepath "$psscriptroot\ezCMDmain.bat" -verb runas
 }
