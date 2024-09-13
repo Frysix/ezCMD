@@ -19,7 +19,7 @@ remove-item -path "$scriptpar2\ezCMD-$gitver.zip"
 start-process -filepath "$scriptpar2\ezCMD-$gitver\ezCMD.bat" -verb runas
 }
 } else {
-start-process -filepath "$psscriptroot\ezCMDmain.bat" -verb runas
 $oldver = (get-content -path $psscriptroot\ver\oldver.txt)
 remove-item -path "$scriptpar2\ezCMD-$oldver" 
+start-process -filepath "$psscriptroot\ezCMDmain.bat" -verb runas
 }
