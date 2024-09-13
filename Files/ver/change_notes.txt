@@ -28,3 +28,7 @@ Changed where battery report was generated to \gen\batteryreport
 
 #ver0.04
 Fixed a code error preventing portable usage of the script
+
+#ver0.05
+Added auto updater
+Changed how os corruption fix works it does more now

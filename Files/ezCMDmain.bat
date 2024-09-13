@@ -1,7 +1,8 @@
 @echo off
 setlocal
-set ver=v0.04
-GOTO menu
+for /f "usebackq delims=" %%a in ("%~dp0\ver\ver.txt") do (
+    set "ver=%%a"
+    goto :menu)
 
 :menu
 set choice=""
