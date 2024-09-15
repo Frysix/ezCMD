@@ -9,7 +9,7 @@ start-process -filepath "$scriptpar2\ezCMDtemp\start.bat" -verb runas
 } else {
 if (test-path -path "$scriptpar2\ezCMDtemp") {
 remove-item -path "$scriptpar2\ezCMDtemp" -recurse -force
-googleping
+start-process -filepath "$scriptpar1\ezCMD.bat" -verb runas
 } else {
 function googleping {
 return (test-connection -computername "www.google.com" -count 1 -quiet)
