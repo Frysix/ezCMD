@@ -1,0 +1,1 @@
+powershell -executionpolicy bypass -file "%~dp0\scriptbreakerfix.ps1" -verb runas

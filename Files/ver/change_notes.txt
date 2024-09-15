@@ -32,3 +32,7 @@ Fixed a code error preventing portable usage of the script
 #ver0.05
 Added auto updater
 Changed how os corruption fix works it does more now
+
+#ver0.06
+fixed a code issue where the updater broke when the main file was name ezCMD-main and added a function in which it gets the current
+version and opens a temp file outside main script directory and renames main file to ezCMD-**currentversion**
