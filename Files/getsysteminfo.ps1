@@ -4,6 +4,8 @@ $os = (Get-WmiObject -Class Win32_OperatingSystem).caption
 $osver = (Get-WmiObject -Class Win32_OperatingSystem).Version
 $cpu = (Get-CimInstance -classname win32_processor).Name
 $cpucore = (Get-CimInstance -classname win32_processor).NumberOfCores
+$cputhreads = (Get-WmiObject -Class Win32_Processor | Select-Object -ExpandProperty ThreadCount)
+$totalthreads = ($cputhreads | Measure-Object -Sum).Sum
 $cpuclock = (Get-CimInstance -classname win32_processor).MaxClockSpeed
 $cpubrand = (Get-CimInstance -classname win32_processor).Manufacturer
 $gpu = (Get-CimInstance win32_VideoController).Name
@@ -32,6 +34,7 @@ $os | Out-File -FilePath "$psscriptroot\gen\systeminfo\os.txt" -Encoding ASCII
 $osver | Out-File -FilePath "$psscriptroot\gen\systeminfo\osver.txt" -Encoding ASCII
 $cpu | Out-File -FilePath "$psscriptroot\gen\systeminfo\cpu.txt" -Encoding ASCII
 $cpucore | Out-File -FilePath "$psscriptroot\gen\systeminfo\cpucore.txt" -Encoding ASCII
+$totalthreads | Out-File -FilePath "$psscriptroot\gen\systeminfo\cputhreads.txt" -Encoding ASCII
 $cpuclock | Out-File -FilePath "$psscriptroot\gen\systeminfo\cpuclock.txt" -Encoding ASCII
 $cpubrand | Out-File -FilePath "$psscriptroot\gen\systeminfo\cpubrand.txt" -Encoding ASCII
 $gpu | Out-File -FilePath "$psscriptroot\gen\systeminfo\gpu.txt" -Encoding ASCII
