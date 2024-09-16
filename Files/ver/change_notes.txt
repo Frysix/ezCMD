@@ -36,3 +36,9 @@ Changed how os corruption fix works it does more now
 #ver0.06
 fixed a code issue where the updater broke when the main file was name ezCMD-main and added a function in which it gets the current
 version and opens a temp file outside main script directory and renames main file to ezCMD-**currentversion**
+
+#ver0.07
+Added Settings menu with ability to disable auto update replaced 2 script files for the launch option to be able to launch depending on the setting selected
+Optimization on TXT file reading because most of the information storing done by the script is in this form
+Fixing syntaxe inefficience and other related functions
+auto updater tweaked to be more efficient and to not display errors with a couple of folder checking

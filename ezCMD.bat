@@ -1,1 +1,1 @@
-powershell -executionpolicy bypass -file "%~dp0\Files\ezCMDadmin1.ps1" -verb runas
+powershell -executionpolicy bypass -file "%~dp0\Files\ScriptLaunchOption.ps1" -verb runas

@@ -18,7 +18,11 @@ if (googleping) {
 $gitver = (invoke-webrequest -uri "https://github.com/Frysix/ezCMD/raw/main/Files/ver/ver.txt" -usebasicp | select-object -expandproperty content)
 if ($gitver -eq $localver) {
 $oldver = (get-content -path $psscriptroot\ver\oldver.txt)
+$oldinstall = "$scriptpar2\ezCMD-$oldver"
+if (test-path -path $oldinstall) {
 remove-item -path "$scriptpar2\ezCMD-$oldver" -recurse -force
+start-process -filepath "$psscriptroot\ezCMDmain.bat" -verb runas
+} else {
 start-process -filepath "$psscriptroot\ezCMDmain.bat" -verb runas
 } else {
 $outdir = (join-path -path "$scriptpar2" -childpath "ezCMD-$gitver.zip")
@@ -32,6 +36,7 @@ start-process -filepath "$scriptpar2\ezCMD-$gitver\ezCMD.bat" -verb runas
 }
 } else { 
 start-process -filepath "$psscriptroot\ezCMDmain.bat" -verb runas
+}
 }
 }
 }
