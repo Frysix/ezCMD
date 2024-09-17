@@ -1,0 +1,1 @@
+powershell -executionpolicy bypass -file "%~dp0\updater.ps1" -verb runas

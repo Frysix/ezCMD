@@ -47,3 +47,6 @@ auto updater tweaked to be more efficient and to not display errors with a coupl
 subversion for fixes
 small fixes and fix on deletion of system info generated files
 
+#ver0.09
+entire rework of the updater reducing time and amount of files needed also process is now smoother and does not leave anything behind
+

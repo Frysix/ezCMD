@@ -1,1 +1,1 @@
-powershell -executionpolicy bypass -file "%~dp0\Files\ScriptLaunchOption.ps1" -verb runas
+powershell -executionpolicy bypass -file "%~dp0\Files\LaunchOptions.ps1" -verb runas
