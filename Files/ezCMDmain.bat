@@ -349,7 +349,7 @@ echo [92m------------ / ---------------------------------------------[0m
 echo [30m.[0m
 echo [30m.[0m
 pause
-del /f "%~dp0\gen\systeminfo\*.txt"
+del /q /f "%~dp0\gen\systeminfo\"
 GOTO menu
 
 :five

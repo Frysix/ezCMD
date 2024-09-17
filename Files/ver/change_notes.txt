@@ -42,3 +42,7 @@ Added Settings menu with ability to disable auto update replaced 2 script files 
 Optimization on TXT file reading because most of the information storing done by the script is in this form
 Fixing syntaxe inefficience and other related functions
 auto updater tweaked to be more efficient and to not display errors with a couple of folder checking
+
+#subver0.075
+small fixes and fix on deletion of system info generated files
+
