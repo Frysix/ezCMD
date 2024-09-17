@@ -43,6 +43,7 @@ Optimization on TXT file reading because most of the information storing done by
 Fixing syntaxe inefficience and other related functions
 auto updater tweaked to be more efficient and to not display errors with a couple of folder checking
 
-#subver0.075
+#ver0.08
+subversion for fixes
 small fixes and fix on deletion of system info generated files
 
