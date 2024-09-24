@@ -5,7 +5,7 @@
 #function to get github version
 function get-gitver {
 	
-	$gitver = invoke-webrequest -uri "https://github.com/Frysix/ezCMD/raw/main/Files/ver/ver.txt" -usebasicp | select-object -expandproperty content
+	$gitver = (invoke-webrequest -uri "https://github.com/Frysix/ezCMD/raw/main/Files/ver/ver.txt" -usebasicp | select-object -expandproperty content)
 	
 	return $gitver
 	

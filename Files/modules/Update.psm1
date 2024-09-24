@@ -26,8 +26,7 @@ function start-update {
 	$parent0 = get-parent -dir "$psscriptroot"
 	$parent1 = get-parent -dir "$parent0"
 	$parent2 = get-parent -dir "$parent1"
-	$gitver1 = get-gitver
-	$localver1 = get-localver
+	$gitver = get-gitver
 	
 	new-item -path "$parent2\temp" -itemtype directory
 	
@@ -35,8 +34,8 @@ function start-update {
 	
 	rename-item -path "$parent2\temp\ezCMD-main" -newname "ezCMD-$gitver"
 	
-	out-txt -val "true" -txt "$parent2\temp\ezCMD-$gitver\Files\config\cleanup.txt"
-	out-txt -val $parent1 -txt "$parent2\temp\ezCMD-$gitver\Files\config\oldinst.txt"
+	$true | out-file -filepath "$parent2\temp\ezCMD-$gitver\Files\config\cleanup.txt" -encoding ascii
+	$parent1 | out-file -filepath "$parent2\temp\ezCMD-$gitver\Files\config\oldinst.txt" -encoding ascii
 	
 	copy-item -path "$parent2\temp\ezCMD-$gitver" -destination "$parent2" -recurse -force
 	
