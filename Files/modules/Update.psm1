@@ -56,18 +56,19 @@ function clean-update {
 	remove-item -path "$parent3\config\cleanup.txt" -recurse -force
 	remove-item -path "$parent3\config\oldinst.txt" -recurse -force
 	
-	out-txt -val "false" -txt "$parent3\config\cleanup.txt"
+	$false | out-file -filepath "$parent3\config\cleanup.txt" -encoding ascii
 	
 }
 
 #function to clean updates made from v0.09
 function cleanold-update {
-	
+	pause
 	$Files = get-parent -dir "$psscriptroot"
 	$ezCMD = get-parent -dir "$Files"
-	$Root = get-parent -dir "$ezCMD"
+	$Base = get-parent -dir "$ezCMD"
 	
-	remove-item -path "$Root\ezCMD-TEMP" -recurse -force
+	remove-item -path "$Base\ezCMD-TEMP" -recurse -force
 	remove-item -path "$Files\config\wasupdated.txt" -recurse -force
+	
 	
 }

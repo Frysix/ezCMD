@@ -57,7 +57,7 @@ if ($admin -eq "false") {
 				
 				if ($wasupdated -eq "true") {
 					
-					cleanupold-update
+					cleanold-update
 					
 					start-main
 					

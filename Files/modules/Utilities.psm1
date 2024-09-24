@@ -56,28 +56,15 @@ function get-app {
 #function to check if user is connected to internet
 function get-internet {
 	
-	$internetstatus = test-connection "google.com" -count 1 -quiet
-	
-	return $internetstatus
-	
-}
-
-#function to print to txt
-function out-txt {
-	
-	[cmdletbinding()]
-	
-	param (
-	
-		[parameter(mandatory=$true)]
-		[string]$val,
+	if (test-connection "google.com" -count 1 -quiet) {
 		
-		[parameter(mandatory=$true)]
-		[string]$txt
-		
-	)
+		return "true"
 	
-	$val | out-file -filepath $txt -encoding ascii
+	} else {
+		
+		return "false"
+		
+	}
 	
 }
 
