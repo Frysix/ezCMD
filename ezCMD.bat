@@ -1,1 +1,2 @@
-powershell -executionpolicy bypass -file "%~dp0\Files\LaunchOptions.ps1" -verb runas
+@echo off
+powershell -executionpolicy bypass -file "%~dp0\Files\Launcher.ps1" -verb runas

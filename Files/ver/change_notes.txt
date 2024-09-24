@@ -50,3 +50,6 @@ small fixes and fix on deletion of system info generated files
 #ver0.09
 entire rework of the updater reducing time and amount of files needed also process is now smoother and does not leave anything behind
 
+#ver0.10
+Remade the entire backend it all works through a single ps1 file called backend and then this file acts as a sorter to take the demand that the main script outputs and launch the according tasks
+also remade the launcher from scratch again and the updater more detailed notes in descriptions in the script
