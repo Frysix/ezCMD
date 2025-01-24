@@ -361,9 +361,9 @@ function Install-Script {
 
         }
 
-        if (test-path -path $path"\ezCMD-main\"$scriptfilesconstant.ezcmd) {
+        if (test-path -path $path\ezCMD-main\$scriptfilesconstant.ezcmd) {
 
-            start-process -FilePath $path"\ezCMD-main\"$scriptfilesconstant.ezcmd -verb runas
+            start-process -FilePath $path\ezCMD-main\$scriptfilesconstant.ezcmd -verb runas
 
             exit
 
@@ -454,7 +454,7 @@ function Install-Script {
 #checks if user is admin
 if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
 
-    start-process -filepath "$env:root\ezCMD.exe" -verb runas
+    start-process -filepath $scriptfiles.ezcmd -verb runas
 
     exit
 
