@@ -17,8 +17,8 @@
 ##################################################################################################################################################################
 
 
-#Define Script Root Variable for compatibility with .EXE
-$env:root = Split-Path (Convert-Path -LiteralPath ([Environment]::GetCommandLineArgs()[0]))
+#Define Script Root Variable for compatibility
+$env:root = $psscriptroot
 #Define parent of script root in en environement variable
 $env:parent = split-path -path $env:root -parent
 #define script file constant
