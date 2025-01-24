@@ -25,7 +25,8 @@ $env:parent = split-path -path $env:root -parent
 $scriptfilesconstant = @{
 
     ver = "\ver\ver.txt"
-    ezcmd = "\ezCMD.exe"
+    ezcmd = "\ezCMD.bat"
+    ezcmdPS1 = "\ezCMD.ps1"
     webdriver = "\libs\WebDriver.dll"
     selenium = "\modules\Selenium.psm1"
     settings = "\Settings.ini"
@@ -41,7 +42,8 @@ $scriptfilesconstant = @{
 $scriptfiles = @{
 
     ver = "$env:root\ver\ver.txt"
-    ezcmd = "$env:root\ezCMD.exe"
+    ezcmd = "$env:root\ezCMD.bat"
+    ezcmdPS1 = "$env:root\ezCMD.ps1"
     webdriver = "$env:root\libs\WebDriver.dll"
     selenium = "$env:root\modules\Selenium.psm1"
     settings = "$env:root\Settings.ini"
@@ -481,7 +483,7 @@ foreach ($file in $scriptfiles.GetEnumerator()) {
 
 #verify what percentage of total files are present
 #checks if there is exactly 1 file present
-if ($presentscriptfilescount -le 1) {
+if ($presentscriptfilescount -le 2) {
 
     Get-UserConfirmation -text2 "No installation detected." -text3 "Do you want to install from scratch?"
 
@@ -501,7 +503,7 @@ if ($presentscriptfilescount -le 1) {
 
 
 #checks if some files are missing but not all
-if ($presentscriptfilescount -ge 2) {
+if ($presentscriptfilescount -ge 3) {
 
     if ($presentscriptfilescount -lt $totalscriptfilescount) {
 
