@@ -363,7 +363,7 @@ function Install-Script {
 
         if (test-path -path "$path\ezCMD-main\ezCMD.exe") {
 
-            start-process -FilePath "$path\ezCMD-main\ezCMD.exe" -verb runas
+            start-process -FilePath $path"\ezCMD-main\"$scriptfilesconstant.ezcmd -verb runas
 
             exit
 
@@ -438,7 +438,7 @@ function Install-Script {
 
         Show-InformationBox -message "ezCMD has fixed itself. The App will restart when you press: OK."
 
-        start-process -FilePath "$env:root\ezCMD.exe" -verb runas
+        start-process -FilePath $scriptfiles.ezcmd -verb runas
 
         exit
 
