@@ -361,13 +361,11 @@ function Install-Script {
 
         }
 
-        if (test-path -path $path\ezCMD-main\$scriptfilesconstant.ezcmd) {
+        $ezCMDPath = $scriptfilesconstant.ezcmd
 
-            start-process -FilePath $path\ezCMD-main\$scriptfilesconstant.ezcmd -verb runas
+        start-process -FilePath "$path\ezCMD-main\$ezCMDPath" -verb runas
 
-            exit
-
-        }
+        exit
 
     } elseif ($type -eq "fix") {
 
